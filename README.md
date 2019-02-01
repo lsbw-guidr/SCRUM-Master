@@ -3,7 +3,7 @@ Lambda School Build Week Feb 4-8 2019
 
 ## Project Resources
 
-[TRELLO](https://trello.com/b/3v6wgE1I/guidr)
+[TRELLO TEAM PAGE](https://trello.com/guidr3)
 
 [MONDAY](https://lambdaschool.monday.com/boards/165411499/pulses/170248161)
 
