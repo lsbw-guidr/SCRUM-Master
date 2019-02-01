@@ -5,6 +5,8 @@ Lambda School Build Week Feb 4-8 2019
 
 **[TRELLO - TEAM PAGE](https://trello.com/guidr3)**
 
+**[GITHUB - GUIDR ORGANIZATION PAGE](https://github.com/lsbw-guidr)**
+
 **[BUILD WEEK POLICIES AND PROCEDURES](https://www.notion.so/Policies-and-Procedures-19e679fc1a284b668d8132dd8d7228cd)**
 
 **[BUILD WEEK SCHEDULE AND DAILY MILESTONES](https://www.notion.so/Build-week-Schedule-and-Daily-Milestones-7f0aca2ad598459fa4492fdac9881d5b)**
