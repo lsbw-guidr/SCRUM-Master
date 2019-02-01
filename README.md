@@ -11,7 +11,7 @@ Lambda School Build Week Feb 4-8 2019
 
 **[BUILD WEEK SCHEDULE AND DAILY MILESTONES](https://www.notion.so/Build-week-Schedule-and-Daily-Milestones-7f0aca2ad598459fa4492fdac9881d5b)**
 
-**[MONDAY - BUILD WEEK PROJECTS](https://lambdaschool.monday.com/boards/165411499/pulses/170248161)**
+**[MONDAY - BUILD WEEK PROJECT LIST](https://lambdaschool.monday.com/boards/165411499/pulses/170248161)**
 
 ## Project Overview
 **Pitch:** Guidr helps back country guides of all types log their private/professional trips. 
