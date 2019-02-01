@@ -16,7 +16,7 @@ Lambda School Build Week Feb 4-8 2019
 ## Project Overview
 **Pitch:** Guidr helps back country guides of all types log their private/professional trips. 
 
-**MVP:** Guides will be able to use Guidr to build their Outdoor Resume. Users can login, create read and update their trips with a trip type, location, duration and whether it's private or professional.
+**MVP:** Guides will be able to use Guidr to build their Outdoor Resume. Users can login, create, read, and update their trips with a trip type, location, duration, and whether it's private or professional.
 
 **Stretch:** Allow users to print off their outdoor resume in PDF format so that they can hand it off to potential employers/guide licenseing organizations.
 
