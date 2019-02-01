@@ -3,13 +3,13 @@ Lambda School Build Week Feb 4-8 2019
 
 ## Project Resources
 
-[TRELLO TEAM PAGE](https://trello.com/guidr3)
+[TRELLO - TEAM PAGE](https://trello.com/guidr3)
 
-[MONDAY](https://lambdaschool.monday.com/boards/165411499/pulses/170248161)
+[MONDAY - BUILD WEEK PROJECTS](https://lambdaschool.monday.com/boards/165411499/pulses/170248161)
 
-[POLICIES AND PROCEDURES](https://www.notion.so/Policies-and-Procedures-19e679fc1a284b668d8132dd8d7228cd)
+[BUILD WEEK POLICIES AND PROCEDURES](https://www.notion.so/Policies-and-Procedures-19e679fc1a284b668d8132dd8d7228cd)
 
-[SCHEDULE AND DAILY MILESTONES](https://www.notion.so/Build-week-Schedule-and-Daily-Milestones-7f0aca2ad598459fa4492fdac9881d5b)
+[BUILD WEEK SCHEDULE AND DAILY MILESTONES](https://www.notion.so/Build-week-Schedule-and-Daily-Milestones-7f0aca2ad598459fa4492fdac9881d5b)
 
 ## Project Overview
 **Pitch:** Guidr helps back country guides of all types log their private/professional trips. 
