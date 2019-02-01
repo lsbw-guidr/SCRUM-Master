@@ -1,7 +1,37 @@
 # Guidr
 Lambda School Build Week Feb 4-8 2019
 
-## SCRUM-Master Repository
+## Project Resources
+
+**TRELLO:** https://trello.com/b/3v6wgE1I/guidr
+
+**MONDAY:** https://lambdaschool.monday.com/boards/165411499/pulses/170248161
+
+## Project Overview
+**Pitch:** Guidr helps back country guides of all types log their private/professional trips. 
+
+**MVP:** Guides will be able to use Guidr to build their Outdoor Resume. Users can login, create read and update their trips with a trip type, location, duration and whether it's private or professional.
+
+**Stretch:** Allow users to print off their outdoor resume in PDF format so that they can hand it off to potential employers/guide licenseing organizations.
+
+## MEMBERS:
+
+**UX Designer:** Olu Durojaiye
+
+**IOS:** TBD
+
+**UI 1:** Daniel Starling
+**UI 2:** James Basile
+**UI 3:** Will Schulz
+
+**Front End 1:** David Flack
+**Front End 2:** Daniel Weinman
+
+**Back End:** Holden Bucher
+
+**SCRUM Master:** Adam Reid
+
+### Project Objectives
 
 **MVP**
 
