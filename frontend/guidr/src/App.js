@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import LoginView from './views/LoginView'
 
 import './App.css';
+import TripList from './components/TripList/TripList';
 
 class App extends Component {
 
@@ -25,6 +26,7 @@ class App extends Component {
     return (
       <div className="App">
         <Route path='/login' component={LoginView} />
+        <Route path = '/triplist' component={TripList} />
       </div>
     );
   }

@@ -7,11 +7,12 @@ const { hasCorrectKeys, checkDesignation } = require('../../middleware');
 
 const router = express.Router();
 
-router.get('/:guideId/all', async (req, res) => {
+router.get(`/:guideId/all`, async (req, res) => {
 	const { guideId } = req.params;
 	try {
 		const trips = await getTripsByUser(guideId);
 		if (trips.length === 0) {
+			console.log("NO TRIPS FOUND!");
 			res.status(404).json({ error: 'A guide with that ID does not exist' });
 		} else {
 			res.status(200).json(trips);
@@ -21,7 +22,7 @@ router.get('/:guideId/all', async (req, res) => {
 	}
 });
 
-router.get('/:guideId/:tripId', async (req, res) => {
+router.get(`/:guideId/:tripId`, async (req, res) => {
 	const { tripId, guideId } = req.params;
 	try {
 		const trip = await getTripByIds(tripId, guideId);

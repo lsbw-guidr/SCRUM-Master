@@ -6,7 +6,9 @@ import {
     HANDLE_LOGIN_CHANGES,
     LOGIN_USER_START,
     LOGIN_USER_SUCCESS,
-    LOGIN_USER_FAIL
+    LOGIN_USER_FAIL,
+    FETCHING_TRIPS,
+    TRIPS_FETCHED,
 } from '../actions'
 
 const initialState = {
@@ -23,7 +25,10 @@ const initialState = {
         password: ''
     },
     token: '',
-    isLoggedIn: false
+    trips: [],
+    isLoggedIn: false,
+    uuid: null,
+    fetchingTrips: false,
 };
 
 const reducer = (state = initialState, action) =>{
@@ -77,6 +82,19 @@ const reducer = (state = initialState, action) =>{
             return {
                 ...state,
                 isLoggingIn: false
+            }
+
+        case FETCHING_TRIPS:
+            return {
+                ...state,
+                fetchingTrips: true,
+            }
+
+        case TRIPS_FETCHED:
+            return {
+                ...state,
+                trips: action.payload,
+                fetchingTrips: false,
             }
         default: 
             return state
