@@ -9,8 +9,10 @@ const {
 const router = express.Router();
 
 router.post('/register', async (req, res) => {
-	let { password } = req.body;
-	password = hashPass(password, 14);
+	let {password} = req.body;
+    password = hashPass(password, 14);
+    console.log("password", password);
+    req.body.password = password;
 
 	try {
 		const ids = await register(req.body);

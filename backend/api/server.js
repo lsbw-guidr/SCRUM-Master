@@ -12,6 +12,14 @@ const server = express();
 server.use(express.json());
 server.use(helmet());
 server.use(cors());
+function logger (req, res, next){
+    console.log(`${req.method} to ${req.url}`);
+
+    next();
+}
+
+server.use(logger);
+
 
 server.use('/user', verifyAuth, protectedRouter);
 server.use('/auth', signInRouter);
