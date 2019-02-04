@@ -11,8 +11,7 @@ const router = express.Router();
 router.post('/register', async (req, res) => {
 	let {password} = req.body;
     password = hashPass(password, 14);
-    console.log("password", password);
-    req.body.password = password;
+    req.body.password = password; // ensure that only hashed passwords store to the database
 
 	try {
 		const ids = await register(req.body);
