@@ -3,6 +3,7 @@ import { Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import LoginView from './views/LoginView'
+import Navigation from './components/Navigation/Navigation';
 
 import './App.css';
 import TripList from './components/TripList/TripList';
@@ -24,9 +25,17 @@ class App extends Component {
 
   render() {
     return (
+      <div className = 'body-container'>
+
+      <div className = "Nav">
+        <Navigation />
+        </div>
+      
       <div className="App">
+        
         <Route path='/login' component={LoginView} />
         <Route path = '/triplist' component={TripList} />
+      </div>
       </div>
     );
   }

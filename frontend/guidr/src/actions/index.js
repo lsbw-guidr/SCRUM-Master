@@ -8,11 +8,16 @@ export const HANDLE_LOGIN_CHANGES = 'HANDLE_LOGIN_CHANGES';
 export const LOGIN_USER_START = 'LOGIN_USER_START';
 export const LOGIN_USER_SUCCESS = 'LOGIN_USER_SUCCESS';
 export const LOGIN_USER_FAIL = 'LOGIN_USER_FAIL';
-export const FETCHING_TRIPS = 'FETCHING_TRIPS';
-export const TRIPS_FETCHED = 'TRIPS_FETCHED';
+export const FETCHING_ALL_USER_TRIPS = 'FETCHING_ALL_USER_TRIPS';
+export const ALL_USER_TRIPS_FETCHED = 'ALL_USER_TRIPS_FETCHED';
+export const LOGGING_OUT = 'LOGGING_OUT';
+export const LOGGED_OUT = 'LOGGED_OUT';
 
 const baseURL = 'http://localhost:8000';
 
+/**************************************************/
+// REGISTER, LOGIN, AND LOGOUT MANAGEMENT //
+/**************************************************/
 export const handleRegisterChanges = e => {
     return { type: HANDLE_REGISTER_CHANGES, payload: e }
 }
@@ -40,7 +45,26 @@ export const loginUser = (username, password) => dispatch => {
     .catch(err => dispatch({ type: LOGIN_USER_FAIL, payload: err }))
 }
 
-export const fetchAllTrips = (id) => dispatch => {
+export const logout = () => {
+    return dispatch => {
+        dispatch({type: LOGGING_OUT});
+
+        localStorage.removeItem('jwt');
+        localStorage.removeItem('uuid');
+
+        dispatch({type: LOGGED_OUT});
+    }
+}
+
+export const search = (term) => {
+    console.log('search');
+}
+
+/**************************************************/
+// TRIP DATA MANAGEMENT //
+//**************************************************/
+
+export const fetchAllUserTrips = (id) => dispatch => {
     const token = localStorage.getItem('jwt');
 
     const options = {
@@ -49,14 +73,26 @@ export const fetchAllTrips = (id) => dispatch => {
         }
     }
     
-    dispatch({type: FETCHING_TRIPS})
+    dispatch({type: FETCHING_ALL_USER_TRIPS})
 
     axios.get(`${baseURL}/user/trips/${id}/all`, options)
     .then(res => {
-        dispatch({type: TRIPS_FETCHED, payload: res.data});
+        dispatch({type: ALL_USER_TRIPS_FETCHED, payload: res.data});
         console.log("res.data", res.data);
     })
     .catch(err => {
         console.log(err);
     })
 }
+
+/**************************************************/
+// USER DATA MANAGEMENT //
+/**************************************************/
+
+// TODO
+
+/**************************************************/
+// SEARCH DATA MANAGEMENT //
+/**************************************************/
+
+// TODO

@@ -3,19 +3,15 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 
-import {loginUser, fetchAllUserTrips} from '../../actions/index';
+import {fetchAllPublicTrips} from '../../actions/index';
 
-class TripList extends React.Component {
-    componentDidMount(){
-        const id = localStorage.getItem('uuid');
-        this.props.fetchAllUserTrips(id);
-    }
+class LandingPage extends React.Component {
 
     render(){
         return(
             <div>
-                THIS IS THE TRIP LIST
-                {this.props.userTrips.map(trip => {
+                LANDING PAGE
+                {this.props.publicTrips.map(trip => {
                     return (
                         <div key = {trip.id}>
                         <div>TITLE: {trip.title}</div>
@@ -33,7 +29,7 @@ class TripList extends React.Component {
 const mapStateToProps = state => ({
     isLoggedIn: state.isLoggedIn,
     uuid: state.uuid,
-    userTrips: state.userTrips
+    publicTrips: state.publicTrips
 })
 
-export default withRouter(connect(mapStateToProps, {loginUser, fetchAllUserTrips})(TripList));
+export default withRouter(connect(mapStateToProps, {fetchAllPublicTrips})(LandingPage));

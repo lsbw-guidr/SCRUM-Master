@@ -7,8 +7,8 @@ import {
     LOGIN_USER_START,
     LOGIN_USER_SUCCESS,
     LOGIN_USER_FAIL,
-    FETCHING_TRIPS,
-    TRIPS_FETCHED,
+    FETCHING_ALL_USER_TRIPS,
+    ALL_USER_TRIPS_FETCHED,
 } from '../actions'
 
 const initialState = {
@@ -84,13 +84,13 @@ const reducer = (state = initialState, action) =>{
                 isLoggingIn: false
             }
 
-        case FETCHING_TRIPS:
+        case FETCHING_ALL_USER_TRIPS:
             return {
                 ...state,
                 fetchingTrips: true,
             }
 
-        case TRIPS_FETCHED:
+        case ALL_USER_TRIPS_FETCHED:
             return {
                 ...state,
                 trips: action.payload,

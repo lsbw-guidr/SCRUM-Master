@@ -1,0 +1,66 @@
+.navigation-container {
+    max-width: 100%;
+    background: #661fff;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.nav-logo{
+    width: 25%;
+    min-height: 50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: #ffffff;
+}
+
+.logo-img{
+    background: url('../../images/guidr_logo.png') no-repeat 0 0;
+    min-height: 100%;
+    min-width: 50px;
+    background-size: contain;
+}
+
+.nav-links{
+    width: 50%;
+    display: flex;
+    /* border: 2px solid black; */
+    justify-content: center;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0px 20px;
+}
+
+.nav-right{
+    width: 25%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-search{
+    text-align: center;
+}
+
+.nav-login{
+    text-align: center;
+}
+
+.login-btn {
+    background: #ffffff;
+    padding: 10px 40px;
+    border-radius: 10px;
+    margin: 0px 10px;
+}
+
+.nav-search input {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 10px;
+}
