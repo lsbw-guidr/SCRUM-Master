@@ -5,6 +5,7 @@ const {
 module.exports = {
 	verifyAuth: function(req, res, next) {
 		const token = req.headers.authorization;
+
 		if (token) {
 			decodeToken(token, (err, decodedToken) => {
 				if (err) {

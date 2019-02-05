@@ -13,6 +13,9 @@ export const ALL_USER_TRIPS_FETCHED = 'ALL_USER_TRIPS_FETCHED';
 export const LOGGING_OUT = 'LOGGING_OUT';
 export const LOGGED_OUT = 'LOGGED_OUT';
 
+export const FETCHING_PUBLIC_TRIPS = 'FETCHING_PUBLIC_TRIPS';
+export const FETCHED_PUBLIC_TRIPS = 'FETCHED_PUBLIC_TRIPS';
+
 const baseURL = 'http://localhost:8000';
 
 /**************************************************/
@@ -83,6 +86,24 @@ export const fetchAllUserTrips = (id) => dispatch => {
     .catch(err => {
         console.log(err);
     })
+}
+
+export const fetchAllPublicTrips = () => {
+    return dispatch => {
+        dispatch({type: FETCHING_PUBLIC_TRIPS});
+        console.log('fetching public trips')
+        
+        axios.get(`${baseURL}/public/trips/all`)
+        .then(res => {
+            console.log("public trips", res.data);
+            dispatch({type: FETCHED_PUBLIC_TRIPS, payload: res.data});
+        })
+        .catch(err => {
+            console.log(err);
+        })
+
+
+    }
 }
 
 /**************************************************/

@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 
 import LoginView from './views/LoginView'
 import Navigation from './components/Navigation/Navigation';
+import LandingPage from './components/LandingPage/LandingPage';
 
 import './App.css';
 import TripList from './components/TripList/TripList';
@@ -32,7 +33,7 @@ class App extends Component {
         </div>
       
       <div className="App">
-        
+        <Route exact path = '/' component = {LandingPage} />
         <Route path='/login' component={LoginView} />
         <Route path = '/triplist' component={TripList} />
       </div>

@@ -65,6 +65,12 @@ module.exports.trip = {
 			.where({ id })
 			.first();
 	},
+
+	getPublicTrips: function(){ // queries the database for all trips designated "Professional"
+		return db('trips')
+			.where({'designation': 'Professional'})
+	},
+
 	getTripsByUser: function(id) {
 		return db('trips')
 			.where({ guide_id: id })

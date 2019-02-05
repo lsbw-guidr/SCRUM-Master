@@ -25,7 +25,7 @@ const initialState = {
         password: ''
     },
     token: '',
-    trips: [],
+    userTrips: [],
     isLoggedIn: false,
     uuid: null,
     fetchingTrips: false,
@@ -93,7 +93,7 @@ const reducer = (state = initialState, action) =>{
         case ALL_USER_TRIPS_FETCHED:
             return {
                 ...state,
-                trips: action.payload,
+                userTrips: action.payload,
                 fetchingTrips: false,
             }
         default: 

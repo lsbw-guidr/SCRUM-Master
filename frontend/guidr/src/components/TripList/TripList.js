@@ -12,6 +12,10 @@ class TripList extends React.Component {
     }
 
     render(){
+        if(this.props.userTrips === undefined){
+            const id = localStorage.getItem('uuid');
+            this.props.fetchAllUserTrips(id);
+        }
         return(
             <div>
                 THIS IS THE TRIP LIST

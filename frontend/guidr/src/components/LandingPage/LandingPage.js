@@ -7,20 +7,17 @@ import {fetchAllPublicTrips} from '../../actions/index';
 
 class LandingPage extends React.Component {
 
+    componentDidMount = () => {
+        if(this.props.publicTrips == null){
+            this.props.fetchAllPublicTrips();
+        }
+    }
+
     render(){
         return(
             <div>
                 LANDING PAGE
-                {this.props.publicTrips.map(trip => {
-                    return (
-                        <div key = {trip.id}>
-                        <div>TITLE: {trip.title}</div>
-                        <div>DESC: {trip.description}</div>
-                        <img src = {trip.img_url} alt = {trip.id}></img>
-                        </div>
-                    )
-                }
-                    )}
+                
             </div>
         )
     }
