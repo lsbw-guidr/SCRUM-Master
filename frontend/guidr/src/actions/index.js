@@ -21,13 +21,6 @@ const baseURL = 'http://localhost:8000';
 /**************************************************/
 // REGISTER, LOGIN, AND LOGOUT MANAGEMENT //
 /**************************************************/
-export const handleRegisterChanges = e => {
-    return { type: HANDLE_REGISTER_CHANGES, payload: e }
-}
-
-export const handleLoginChanges = e => {
-    return { type: HANDLE_LOGIN_CHANGES, payload: e }
-}
 
 export const registerUser = (name, username, password) => dispatch => {
     dispatch({ type: REGISTER_USER_START})
@@ -36,9 +29,9 @@ export const registerUser = (name, username, password) => dispatch => {
     .catch(err => dispatch({ type: REGISTER_USER_FAIL, payload: err}))
 }
 
-export const loginUser = (username, password) => dispatch => {
+export const loginUser = (user) => dispatch => {
     dispatch( {type: LOGIN_USER_START })
-    axios.post(`${baseURL}/auth/login`, {username: username, password: password})
+    axios.post(`${baseURL}/auth/login`, user)
     .then(res => {
         dispatch({ type: LOGIN_USER_SUCCESS, payload: res.data })
         localStorage.setItem("jwt", `${res.data.token}`);
@@ -48,7 +41,7 @@ export const loginUser = (username, password) => dispatch => {
     .catch(err => dispatch({ type: LOGIN_USER_FAIL, payload: err }))
 }
 
-export const logout = () => {
+export const logoutUser = () => {
     return dispatch => {
         dispatch({type: LOGGING_OUT});
 

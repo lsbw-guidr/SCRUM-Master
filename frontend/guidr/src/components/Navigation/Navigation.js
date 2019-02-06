@@ -1,11 +1,16 @@
 import React from 'react';
 import {Link, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {logout, search} from '../../actions/index';
+import {logoutUser, search} from '../../actions/index';
+
+import Login from '../Authorization/Login';
+
+// TODO: Add reactstrap for login modal window
 
 import './navigation.css';
 
 class Navigation extends React.Component {
+    
     constructor(props){
         super(props);
 
@@ -23,10 +28,34 @@ handleSearchInput = (event) => {
         ...this.state,
         search: event.target.value
     })
+}
 
+handleLogout = event => {
+    event.preventDefault();
+    this.props.logoutUser();
 }
 
     render(){
+
+        const loginButton = (
+            <div className = 'login-btn' onClick = {this.handleLogin}>
+            Login
+            </div>
+        )
+
+        const logoutButton = (
+            <div className = 'login-btn' onClick = {this.handleLogout}>
+            Logout
+            </div>
+        )
+
+        let currentBtn;
+        if(localStorage.getItem('jwt') || this.props.isLoggedIn === true){
+            currentBtn = logoutButton;
+        } else {
+            currentBtn = loginButton;
+        }
+
         return(
             <div className = 'navigation-container'>
                 <div className = 'nav-logo'>
@@ -35,8 +64,9 @@ handleSearchInput = (event) => {
                 </div>
                 <div className = 'nav-links'>
                 <Link to = '/'>HOME</Link>
-                <Link to = '/features'>FEATURES</Link>
-                <Link to = '/adventures'>ADVENTURES</Link>
+                <Link to = '/about'>ABOUT</Link>
+                <Link to = '/guides'>GUIDES</Link>
+                <Link to = '/trips'>TRIPS</Link>
                 <Link to = '/contact'>CONTACT</Link>
                 </div>
                 <div className = 'nav-right'>
@@ -44,9 +74,7 @@ handleSearchInput = (event) => {
                 <input type='search' placeholder = 'Search...' name = 'search' value = {this.state.search} onChange = {this.handleSearchInput}></input>
                 </div>
                 <div className = 'nav-login'>
-                <span className = 'login-btn'>
-                Login
-                </span>
+                {currentBtn}
                 </div>
                 </div>
             </div>
@@ -62,6 +90,6 @@ const mapStateToProps = state => {
   }
   
   export default withRouter(connect(mapStateToProps, {
-    logout,
+    logoutUser,
     search,
   })(Navigation));

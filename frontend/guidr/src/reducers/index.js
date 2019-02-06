@@ -9,6 +9,10 @@ import {
     LOGIN_USER_FAIL,
     FETCHING_ALL_USER_TRIPS,
     ALL_USER_TRIPS_FETCHED,
+    LOGGING_OUT,
+    LOGGED_OUT,
+    FETCHED_PUBLIC_TRIPS,
+    FETCHING_PUBLIC_TRIPS,
 } from '../actions'
 
 const initialState = {
@@ -26,9 +30,11 @@ const initialState = {
     },
     token: '',
     userTrips: [],
+    publicTrips: [],
     isLoggedIn: false,
     uuid: null,
     fetchingTrips: false,
+    isLoggedOut: false,
 };
 
 const reducer = (state = initialState, action) =>{
@@ -96,6 +102,33 @@ const reducer = (state = initialState, action) =>{
                 userTrips: action.payload,
                 fetchingTrips: false,
             }
+
+        case FETCHING_PUBLIC_TRIPS:
+            return {
+                ...state,
+            }
+
+        case FETCHED_PUBLIC_TRIPS:
+            return{
+                ...state,
+                publicTrips: action.payload
+            }
+
+
+        case LOGGING_OUT:
+            return {
+                ...state,
+                isLoggedIn: true,
+            }
+
+        case LOGGED_OUT:
+            return {
+                ...state,
+                isLoggedIn: false,
+                isLoggedOut: true
+            }
+
+
         default: 
             return state
     }

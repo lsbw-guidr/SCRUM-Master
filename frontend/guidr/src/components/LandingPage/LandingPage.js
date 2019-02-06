@@ -5,10 +5,13 @@ import {withRouter} from 'react-router-dom';
 
 import {fetchAllPublicTrips} from '../../actions/index';
 
+import Login from '../Authorization/Login';
+
+
 class LandingPage extends React.Component {
 
     componentDidMount = () => {
-        if(this.props.publicTrips == null){
+        if(!this.props.publicTrips || this.props.publicTrips.length === 0){
             this.props.fetchAllPublicTrips();
         }
     }
@@ -17,6 +20,7 @@ class LandingPage extends React.Component {
         return(
             <div>
                 LANDING PAGE
+                <Login />
                 
             </div>
         )

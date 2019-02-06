@@ -13,7 +13,11 @@ class App extends Component {
 
   componentWillReceiveProps = newProps => {
     if(newProps.isLoggedIn !== this.props.isLoggedIn){
-      this.props.history.push('/user');
+      this.props.history.push('/profile'); // redirects user to their profile upon login
+    }
+
+    if(newProps.isLoggedOut !== this.props.isLoggedOut){
+      this.props.history.push('/'); // redirects user on logout to the homepage
     }
   }
   // Redirects if user is already logged in
@@ -34,7 +38,6 @@ class App extends Component {
       
       <div className="App">
         <Route exact path = '/' component = {LandingPage} />
-        <Route path='/login' component={LoginView} />
         <Route path = '/triplist' component={TripList} />
       </div>
       </div>
@@ -43,7 +46,10 @@ class App extends Component {
 }
 
 const mapStateToProps = state => ({
-  isLoggedIn: state.isLoggedIn
+  isLoggedIn: state.isLoggedIn,
+  isLoggedOut: state.isLoggedOut,
+  userTrips: state.userTrips,
+  publicTrips: state.publicTrips
 })
 
 
