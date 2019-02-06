@@ -1,0 +1,43 @@
+.landing-container{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    height: 90vh;
+}
+
+.landing-left {
+    width: 50%;
+    border: 1px solid red;
+}
+
+.landing-right {
+    width: 50%;
+    border: 1px solid blue;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.landing-right-left {
+    width: 50%;
+}
+
+.landing-right-right{
+    width: 50%;
+}
+
+.landing-featured {
+    height: 70%;
+    border: 1px solid green;
+}
+
+.landing-marquee {
+    height: 30%;
+    border: 1px solid chartreuse;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.landing-med {
+    width: 100%;
+    border: 1px solid red;
+}

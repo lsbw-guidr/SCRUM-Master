@@ -1,0 +1,1 @@
+// contains all the information for the trip from the database
