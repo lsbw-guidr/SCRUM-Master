@@ -22,9 +22,9 @@ const baseURL = 'http://localhost:8000';
 // REGISTER, LOGIN, AND LOGOUT MANAGEMENT //
 /**************************************************/
 
-export const registerUser = (name, username, password) => dispatch => {
+export const registerUser = (user) => dispatch => {
     dispatch({ type: REGISTER_USER_START})
-    axios.post(`${baseURL}/auth/register`, {name: name, username: username, password: password})
+    axios.post(`${baseURL}/auth/register`, {name: user.name, username: user.username, password: user.password, email: user.email})
     .then(res => dispatch({ type: REGISTER_USER_SUCCESS, payload: res.data}))
     .catch(err => dispatch({ type: REGISTER_USER_FAIL, payload: err}))
 }

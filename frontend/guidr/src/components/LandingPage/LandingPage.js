@@ -6,10 +6,12 @@ import {withRouter} from 'react-router-dom';
 import {fetchAllPublicTrips} from '../../actions/index';
 
 import Login from '../Authorization/Login';
+import Register from '../Authorization/Register';
 import FeaturedTrip from '../Trips/FeaturedTrip';
 import MediumTrip from '../Trips/MediumTrip';
 import SmallTrip from '../Trips/SmallTrip';
 import './landing-page.css';
+
 
 
 
@@ -96,7 +98,7 @@ class LandingPage extends React.Component {
 
                 <div className = 'landing-right-right'>
                 
-                <div className = 'landing-register'>register</div>
+                <div className = 'landing-register'><Register /></div>
                 
                 <div className = 'landing-med'>
                 <MediumTrip trip = {medTrips[2]} />
